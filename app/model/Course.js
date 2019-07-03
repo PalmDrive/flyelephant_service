@@ -3,6 +3,14 @@ module.exports = app => {
   const mongoose = app.mongoose;
   const Schema = mongoose.Schema;
 
+  const videoSchema = new Schema({
+    src: String,
+    name: String,
+    description: String,
+    // 视频时常，单位秒
+    length: Number,
+  });
+
   const CourseSchema = new Schema({
     name: {
       type: String,
@@ -30,7 +38,7 @@ module.exports = app => {
       type: Map,
       of: String,
     },
-
+    videos: [ videoSchema ],
     // 多少人已学
     numOfPplLearned: Number,
     coverImgUrl: String,
