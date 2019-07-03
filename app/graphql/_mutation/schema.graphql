@@ -1,0 +1,23 @@
+type Mutation {
+    # 登陆
+    login(identifier: String!, password: String!, identifierType: String): User
+    # 登出
+    logout: String
+    # 注册
+    signup(code: String!, inviteCode: String, password: String!, identifier: String!, identifierType: String, source: Int, lang: String): User
+    # 发送验证码
+    sendsms(phone: String, type: String!): Response
+    # 校验验证码
+    verifyCode(code: String!, identifier: String!, type: String): Response
+    # 忘记密码
+    forgetPassword(newPassword: String! code: String!, identifier: String!, identifierType: String): Response
+    
+    # 修改密码
+    updatePassword(password: String!, newPassword: String!): Response
+    # 绑定手机号
+    bindPhone(phone: String!, phoneCode: String!, googleAuthCode: String, password: String!): User
+    # 解绑手机号
+    untiePhone(phoneCode: String!, googleAuthCode: String, password: String!): User
+    # Update user
+    user(data: JSON): User
+}

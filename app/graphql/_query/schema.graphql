@@ -1,0 +1,13 @@
+type Query {
+    # 用户_查询信息
+    users(filter: JSON, order:JSON, page:JSON): [User]
+    # 用户_查询总量
+    userCount: Int
+
+    products(filter: JSON, order: JSON, page: JSON): [Product]
+    
+    # 查询订单
+    # orders(filter: JSON, order: JSON, page: JSON): [Order]
+    # 订单数量
+    # ordersCount(filter: JSON): Int
+}

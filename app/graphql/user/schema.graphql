@@ -1,0 +1,70 @@
+# 用户的数据结构
+type User {
+  # 用户在数据库中唯一ID
+  _id: String
+  # 用户昵称
+  nickname: String
+  # 手机号
+  phone: String
+  # 用户角色
+  role: Int
+  # 用户邮箱
+  email: String
+
+  # 个人邀请码
+  inviteCode: String
+  # 邀请人ID
+  inviteId: String
+  # login accessToken
+  accessToken: String
+
+  # 头像
+  profilePicUrl: String
+  # 描述
+  description: String
+
+  # 当前的app版本
+  appVersion: String,
+  # ios-china, ios-oversea, android
+  appPlatform: String,
+  # 最近一次打开时间
+  lastOpenedAt: Date
+  jpushRegistrationId: String,
+
+  # 二次验证方式
+  secondAuthType: Int,
+  # 状态 'Verifying' or 'Complete'
+  status: String,
+
+  # 用户选择的显示语言，en/zh
+  lang: String,
+  createdAt: Date,
+  updatedAt: Date,
+}
+
+# type AuthWay {
+#   # 返回标识码, 不为0代表失败
+#   code: Int,
+#   # 具体返回信息
+#   message: String,
+#   # 用户信息，仅在验证成功时返回
+#   user: OneUserInfo
+# }
+
+type BindGoogleAuth {
+  # 返回标识码, 不为0代表失败
+  code: Int,
+  # 具体返回信息
+  message: String,
+  # 二维码链接，用于展示二维码时使用
+  qrUrl: String,
+  # 用户google密钥
+  secret: String
+}
+
+type Response {
+  # 返回标识码, 不为0代表失败
+  code: Int,
+  # 具体返回信息
+  message: String,
+}
