@@ -56,30 +56,16 @@ $ sudo /etc/init.d/nginx restart
 - DNS需要修改
 
 ## API 文档
-https://shimo.im/docs/1sQ99UVAiT8CneUO/ 「Coincare Api」，可复制链接后用石墨文档 App 或小程序打开
+Todo
 
 ## Models
 
 ### User
 
-### Asset
+### Course
 
-用户资产，包括质押的资产。
+### UserCourse
 
-### UserWallet
+### Question
 
-### Order
-
-借贷的订单记录
-
-### Notification
-
-消息记录
-
-### Fee
-
-记录手续费
-
-### AssetTransaction
-
-流水
+### UserQuestion

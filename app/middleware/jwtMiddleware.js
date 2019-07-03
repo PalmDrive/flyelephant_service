@@ -36,6 +36,9 @@ module.exports = () => {
     error.code = 403;
     error.message = 'Forbidden';
 
+    // console.log('resolver');
+    // console.log(resolver);
+
     if (resolver && !inList(resolver, publicResolversList)) {
       if (!jwtUser) {
         throw error;
