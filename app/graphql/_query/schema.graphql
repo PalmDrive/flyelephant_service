@@ -1,10 +1,12 @@
 type Query {
     # 用户_查询信息
     users(filter: JSON, order:JSON, page:JSON): [User]
-    # 用户_查询总量
-    userCount: Int
 
-    products(filter: JSON, order: JSON, page: JSON): [Product]
+    courses(filter: JSON, order: JSON, page: JSON): [Course]
+    coursesCount(filter: JSON): Int
+
+    userCourses(filter: JSON, order: JSON, page: JSON): [UserCourse]
+    userCoursesCount(filter: JSON): Int
     
     # 查询订单
     # orders(filter: JSON, order: JSON, page: JSON): [Order]

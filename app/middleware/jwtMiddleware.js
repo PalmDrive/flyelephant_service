@@ -9,7 +9,8 @@ const publicResolversList = [
   'signup',
   'sendsms',
   'forgetPassword',
-  'priceTicker',
+  'courses',
+  'coursesCount',
 ];
 
 function inList(str, list) {

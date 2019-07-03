@@ -1,0 +1,30 @@
+type Course {
+  _id: String
+  name: String
+  description: String
+  teacher: User
+  type: String
+  category: String
+  coverImgUrl: String
+  
+  # 课程时常，单位秒
+  length: Number,
+
+  # 子课程
+  childrenCourses: Array
+  
+  # 显示的多少人已学
+  # 如果设置了numOfPplLearned字段，使用该字段的值；
+  # 否则取该课程底下userCourses的数量
+  numOfPplLearnedDisplay: Number
+
+
+  createdAt: Date
+  updatedAt: Date
+}
+
+type UserCouse {
+  course: Course,
+  learnedDuration: Number
+  learnedPercent: Number
+}

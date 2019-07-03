@@ -11,7 +11,7 @@ module.exports = {
       const user = ctx.state.user;
       // await ctx.service.user.checkUserLoginState();
       filter = filter || {};
-      if (!user.isAdmin && !user.isAgent) filter._id = user._id;
+      if (!user.isAdmin) filter._id = user._id;
 
       if (filter.inviteId) {
         if (user.isAgent || user.isAdmin) {

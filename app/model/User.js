@@ -1,6 +1,3 @@
-/**
- * Created by Gec on 2018/8/1.
- */
 'use strict';
 module.exports = app => {
   const ctx = app.createAnonymousContext();
