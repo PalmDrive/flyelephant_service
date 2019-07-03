@@ -11,14 +11,15 @@ type Course {
   length: Number,
 
   # 子课程
-  childrenCourses: Array
+  childrenCourses: [Course]
+  
+  # 课后作业题
+  questions: [Question]
   
   # 显示的多少人已学
   # 如果设置了numOfPplLearned字段，使用该字段的值；
   # 否则取该课程底下userCourses的数量
   numOfPplLearnedDisplay: Number
-
-
   createdAt: Date
   updatedAt: Date
 }
@@ -27,4 +28,6 @@ type UserCouse {
   course: Course,
   learnedDuration: Number
   learnedPercent: Number
+  createdAt: Date
+  updatedAt: Date
 }

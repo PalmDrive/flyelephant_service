@@ -7,6 +7,8 @@ type Query {
 
     userCourses(filter: JSON, order: JSON, page: JSON): [UserCourse]
     userCoursesCount(filter: JSON): Int
+
+    userQuestions(filter: JSON, order: JSON, page: JSON): [UserQuestion]
     
     # 查询订单
     # orders(filter: JSON, order: JSON, page: JSON): [Order]

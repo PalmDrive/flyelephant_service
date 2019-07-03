@@ -1,0 +1,32 @@
+type Question {
+  _id: String
+  content: String
+
+  # 编号
+  index: Number
+  options: [ QuestionOption ]
+
+  # text, single_choice, multi_choice
+  type: String
+  requireAttachment: Boolean
+
+  createdAt: Date
+  updatedAt: Date
+}
+
+type QuestionOption {
+  _id: String
+  content: String
+  isRight: Boolean
+  isSelected: Boolean
+}
+
+type userQuestion {
+  _id: String
+  question: Question
+  ansTxt: String
+  ansOptions: [ QuestionOption ]
+  attachmentUrls: [ String ]
+  createdAt: Date
+  updatedAt: Date
+}

@@ -60,6 +60,36 @@ module.exports = {
       return await ctx.model.User.findById(doc.teacherId);
     },
 
+    async childrenCourses(doc, arg, ctx) {
+      const courses = [];
+      const map = doc.chidrenCoursesMap;
+      const keys = map ? map.keys.map(k => Number(k))
+        .sort((a, b) => a - b > 0) : [];
+
+      for (const key of keys) {
+        const id = map.get(String(key));
+        courses.push(await ctx.model.Course.findById(id));
+      }
+
+      return courses;
+    },
+
+    async questions(doc, arg, ctx) {
+      const questions = [];
+      const map = doc.questionsMap;
+      const keys = map ? map.keys.map(k => Number(k))
+        .sort((a, b) => a - b > 0) : [];
+
+      for (const key of keys) {
+        const id = map.get(String(key));
+        const q = await ctx.model.Question.findById(id);
+        q.index = key;
+        questions.push(q);
+      }
+
+      return questions;
+    },
+
     async numOfPplLearnedDisplay(doc, arg, ctx) {
       if (doc.numOfPplLearned !== null && typeof doc.numOfPplLearned !== 'undefined') {
         return doc.numOfPplLearned;

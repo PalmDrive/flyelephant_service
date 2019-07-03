@@ -24,7 +24,11 @@ module.exports = app => {
     },
     childrenCoursesMap: { // { '0': 'xxxxx', }
       type: Map,
-      of: Schema.Types.ObjectId,
+      of: String,
+    },
+    questionsMap: { // // { '0': 'xxxxx', }
+      type: Map,
+      of: String,
     },
 
     // 多少人已学
